@@ -99,7 +99,7 @@ if username:
     if st.button("Done. Submit my evaluation"):
         for prova, avaliacao in avaliacoes.items():
             if avaliacao:
-                conn.execute("INSERT INTO avaliacoes (username, time, prova, avaliacao) VALUES (?, ?, ?, ?)",
+                conn.execute("INSERT INTO avaliacoes (username, skill_group ,skill_name, relevance) VALUES (?, ?, ?, ?)",
                              (username, time_selecionado, prova, avaliacao))
         conn.commit()
         st.success("Evaluations submitted successfully. Thank you!")
